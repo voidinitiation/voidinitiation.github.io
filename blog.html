@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VOID Initiation - Blog</title>
+
+ <style>
+  @font-face {
+    font-family: "FixedSys";
+    src: url("fonts/fixedsys.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Cordata";
+    src: url("fonts/Px437_Cordata_PPC-400.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "IBM3xalt2";
+    src: url("fonts/Px437_IBM_Model3x_Alt2.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "PxPlusRainbow100";
+    src: url("fonts/PxPlus_Rainbow100_re_80.ttf") format("truetype");
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "FixedSys", "Courier New", Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, #000000 60%, #0d0911 70%, #3d0a0d 100%);
+    color: #7a0014;
+  }
+
+  main a:link {
+    color: #a5022b;
+  }
+
+  main a:visited {
+    color: #5a0909;
+  }
+
+  main a:hover {
+    color: rgb(184, 58, 58);
+  }
+
+  .site-header {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+
+  .banner {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 28%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .banner-content {
+    position: absolute;
+    left: 240px;
+    top: 20px;
+    z-index: 2;
+    background: linear-gradient(90deg, #530101 0%, #660106 25%, #912638 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0;
+  }
+
+  nav {
+    height: 44px;
+    background: rgb(122, 0, 20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0 12px;
+    border-radius: 6px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 0 8px;
+    padding: 6px 12px;
+    font-size: 18px;
+    font-family: "IBM3xalt2", monospace;
+    font-weight: bold;
+    color: black;
+    background: transparent;
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+
+  nav a:hover {
+    color: rgb(184, 58, 58);
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 12px 40px;
+  }
+
+  .terminal-bar {
+    background: linear-gradient(to bottom, #1a0002, #0a0001);
+    border-bottom: 2px solid #7a0014;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .h {
+    margin: 0;
+    padding: 0;
+    color: #7a0014;
+    font-size: 1.1rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    line-height: 1;
+    white-space: nowrap;
+    font-family: "Cordata", monospace;
+  }
+
+  .window-controls {
+    display: flex;
+    gap: 6px;
+  }
+
+  .btn {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    border: 1px solid #7a0014;
+    display: inline-block;
+  }
+
+  .btn.close { background: #7a0014; }
+  .btn.min { background: #5a000f; }
+  .btn.max { background: #3a0009; }
+
+  .blog-shell {
+    border: 2px solid #7a0014;
+    background: black;
+    border-radius: 10px;
+    box-shadow:
+      inset 0 0 0 1px #2a0005,
+      0 0 0 1px #140003;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .blog-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 2px,
+      rgba(122, 0, 20, 0.03) 2px,
+      rgba(122, 0, 20, 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .blog-intro {
+    position: relative;
+    z-index: 2;
+    padding: 16px 18px 8px;
+    border-bottom: 1px solid #5a000f;
+  }
+
+  .blog-title {
+    margin: 0 0 8px 0;
+    font-family: "Cordata", monospace;
+    font-size: 28px;
+    color: #7a0014;
+  }
+
+  .blog-desc {
+    margin: 0;
+    font-family: "Cordata", monospace;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #7a0014;
+  }
+
+  #posts-container {
+    position: relative;
+    z-index: 2;
+    padding: 14px;
+  }
+
+  .post-card {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 14px;
+    border: 1px solid #660606;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 10px 0;
+    background: linear-gradient(180deg, #1a0202, #100101);
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,0.02),
+      0 0 16px rgba(122,0,20,0.08);
+    align-items: stretch;
+  }
+
+  .post-thumb {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #7a0014;
+    background: #050000;
+    box-shadow:
+      0 0 0 1px #2c0006,
+      inset 0 0 0 1px rgba(255,255,255,0.03),
+      0 0 10px rgba(122,0,20,0.18);
+    position: relative;
+    flex: 0 0 auto;
+  }
+
+  .post-thumb::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(to bottom, rgba(255,255,255,0.02), transparent 20%, transparent 80%, rgba(122,0,20,0.08)),
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 2px,
+        rgba(122,0,20,0.05) 2px,
+        rgba(122,0,20,0.05) 4px
+      );
+    z-index: 2;
+  }
+
+  .post-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.08) saturate(0.9) sepia(0.18) brightness(0.9);
+    transition: transform 0.18s ease, filter 0.18s ease;
+  }
+
+  .post-card:hover .post-thumb img {
+    transform: scale(1.04);
+    filter: contrast(1.15) saturate(0.98) sepia(0.12) brightness(0.96);
+  }
+
+  .post-card-content {
+    min-width: 0;
+  }
+
+  .post-card h3 {
+    margin: 0 0 6px 0;
+    font-family: "IBM3xalt2", monospace;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .post-card p {
+    margin: 0 0 8px 0;
+    font-family: "Cordata", monospace;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #7a0014;
+  }
+
+  .post-card small {
+    display: block;
+    margin: 0;
+    color: #690d0d;
+    font-size: 0.85rem;
+    font-family: "IBM3xalt2", monospace;
+  }
+
+  .post-card a {
+    text-decoration: none;
+  }
+
+  .post-card a:hover {
+    text-decoration: underline;
+  }
+
+  .post-card.is-empty {
+    display: block;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 19px;
+    opacity: 70%;
+  }
+
+  @media (max-width: 700px) {
+    .post-card {
+      grid-template-columns: 92px 1fr;
+      gap: 12px;
+      padding: 10px;
+    }
+
+    .post-thumb {
+      width: 92px;
+      height: 92px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .banner { height: 160px; }
+    .banner-content { left: 12px; top: 12px; }
+    .banner-content h1 { font-size: 1.2rem; margin: 0; }
+    .blog-title { font-size: 22px; }
+    .post-card h3 { font-size: 18px; }
+    .post-card p { font-size: 16px; }
+    .post-card { grid-template-columns: 80px 1fr; }
+    .post-thumb { width: 80px; height: 80px; }
+  }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="banner">
+      <img src="/Images/header.png" alt="Site banner" class="header-banner">
+      <div class="banner-content">
+        <h1 style="font-family: 'PxPlusRainbow100', system-ui, sans-serif; font-size:80px; padding:0; margin-top: 40px; margin-bottom: 0;">VOID INITIATION</h1>
+        <p style="font-family: 'Cordata', monospace; font-weight: bold; font-size: 19px; margin-top: 3px;">
+          Liberation project, promoting self awareness and independent thinking.<br>
+          Re-introducing spiritual philosophy and metaphysical practices in a grounded and reliable way.<br>
+          Counteracting magical thinking and modern spiritual traps.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">home⚝</a>
+    <a href="blog.html">blog𓇻</a>
+    <a href="services.html">services✰</a>
+    <a href="socials.html">socials✰</a>
+  </nav>
+
+  <main>
+    <section class="blog-shell">
+      <div class="terminal-bar">
+        <h2 class="h">VOID's Blog</h2>
+        <span class="window-controls">
+          <span class="btn close"></span>
+          <span class="btn min"></span>
+          <span class="btn max"></span>
+        </span>
+      </div>
+
+      <div class="blog-intro">
+        <p class="blog-desc">Everything on spirituality and metaphysics.</p>
+      </div>
+
+      <div id="posts-container">
+        <p class="post-card is-empty">Loading posts...</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, c => ({
+        '&':'&amp;',
+        '<':'&lt;',
+        '>':'&gt;',
+        '"':'&quot;',
+        "'":'&#39;'
+      })[c]);
+    }
+
+    function getThumb(post) {
+      return post.thumbnail || post.thumb || post.image || post.cover || post.preview_image || "/Images/default-thumb.png";
+    }
+
+    fetch("/posts-data.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load posts");
+        return res.json();
+      })
+      .then((posts) => {
+        const container = document.getElementById("posts-container");
+        const visible = posts
+          .filter((post) => !post.draft)
+          .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        if (!visible.length) {
+          container.innerHTML = '<p class="post-card is-empty">No posts found.</p>';
+          return;
+        }
+
+        container.innerHTML = visible.map((post) => {
+          const thumb = getThumb(post);
+          return `
+            <article class="post-card">
+              <a class="post-thumb" href="/blog-post.html?id=${encodeURIComponent(post.id)}" aria-label="Open ${escapeHtml(post.title)}">
+                <img src="${escapeHtml(thumb)}" alt="${escapeHtml(post.title)} thumbnail" loading="lazy">
+              </a>
+              <div class="post-card-content">
+                <h3><a href="/blog-post.html?id=${encodeURIComponent(post.id)}">${escapeHtml(post.title)}</a></h3>
+                <p>${escapeHtml(post.summary || "")}</p>
+                <small>${escapeHtml(post.date || "")}</small>
+              </div>
+            </article>
+          `;
+        }).join("");
+      })
+      .catch(() => {
+        document.getElementById("posts-container").innerHTML =
+          '<p class="post-card is-empty">Failed to load posts.</p>';
+      });
+  </script>
+  <footer>
+    &copy; 2026 VOID Initiation
+  </footer>
+</body>
+</html>
