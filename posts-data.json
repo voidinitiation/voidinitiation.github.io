@@ -7,5 +7,14 @@
     "summary": "How to use demonic archetypes and demonology for changing the circumstances of life.",
     "file": "blog-posts/blog1.md",
     "thumbnail": "/Images/posts-img/19.png"
-  }
+  },
+    {
+      "id": "2",
+      "slug": "SPIRITUALITY",
+      "title": "Spirituality 101",
+      "date": "February 15, 2026",
+      "summary": "I'm unleashing the truth about spirituality, giving guidance towards beginners, and clarifying modern spiritual traps, so that you dont fall into them.",
+      "file": "blog-posts/blog2.md",
+      "thumbnail": "/Images/thumbs/blog9.jpg"
+    }
   ]
