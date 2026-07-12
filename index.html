@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VOID Initiation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @font-face {
+  font-family: "FixedSys";
+  src: url("fonts/fixedsys.ttf") format("truetype");
+    }
+    @font-face {
+    font-family: "Cordata";
+    src: url("fonts/Px437_Cordata_PPC-400.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "IBM3xalt2";
+    src: url("fonts/Px437_IBM_Model3x_Alt2.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "ToshibaSat";
+    src: url("fonts/Ac437_ToshibaSat_8x16.ttf") format("truetype");
+  }
+  @font-face {
+  font-family: "PxPlusRainbow100";
+  src: url("fonts/PxPlus_Rainbow100_re_80.ttf") format("truetype");
+}
+  @font-face {
+    font-family: "MByteMono";
+    src: url("fonts/Px437_MBytePC230_Mono.ttf");
+  }
+    body {
+      font-family: "FixedSys", "Courier New", Courier, monospace;
+      margin: 0;
+      padding: 0px;
+      background: linear-gradient(90deg, #000000 60%, #0d0911 70%, #3d0a0d 100%);
+      color: #7a0014;
+      
+    }
+    nav {
+  height: 44px;                         /* stripe height */
+  background: rgb(122, 0, 20);          /* stripe color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0 0px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border-radius: 6px;                   /* optional rounded edges */
+}
+
+nav a {
+  display: inline-block;
+  margin: 0 8px;
+  padding: 6px 12px;
+  font-size: 18px;
+  font-style: bold;
+  font-family: "IBM3xalt2", monospace;
+  font-weight: bold;
+  color: black;                         /* text color on stripe */
+  background: transparent;              /* no inner box */
+  border: none;                         /* remove inner border */
+  text-decoration: none;
+  border-radius: 4px;                   /* optional */
+}
+
+/* subtle hover */
+nav a:hover {
+  color: rgb(184, 58, 58);
+  background: rgba(0,0,0,0.2);
+}
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 19px;
+      font-style: color rgb(0, 0, 0);
+      opacity: 70%;
+
+    }
+    .h {
+        text-align: left;
+        font-size: 36px;
+        font-family: "Cordata", monospace;
+        margin: 10px;
+        padding: 7px;
+        color: #7a0014;
+    }
+    .p {
+        text-align: left;
+        font-size: 22px;
+        font-family: "Cordata", monospace;
+        margin: 5px;
+        color: #7a0014;
+    }
+    .p- {
+        text-align: left;
+        font-size: 18px;
+        font-family: "IBM3xalt2", monospace;
+        margin: 5px;
+        color: #7a0014;
+    }
+
+.site-header {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+.banner {
+  position: relative;
+  height: 250px;              /* visible banner height */
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;    /* adjust vertical crop */
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* overlay text */
+.banner-content {
+  position: absolute;
+  left: 240px;                 /* adjust horizontal position */
+  top: 20px;                  /* adjust vertical position */
+  z-index: 2;
+  background: linear-gradient(90deg, #530101 0%, #660106 25%, #912638 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0px;
+}
+
+/* responsive tweaks */
+@media (max-width:600px){
+  .banner { height: 160px; }
+  .banner-content { left: 12px; top: 12px; }
+  .banner-content h1 { font-size: 1.2rem; margin:0; }
+}
+.small-card{padding:8px;border:2px solid #700606;border-radius:5px;margin-left: 20px;margin-bottom: 20px;background:#1d0202;max-width:940px;font-size:14px;}
+.small-card h4{margin:0 0 0px 0;font-size:13px;}
+.small-card ul{list-style:none;margin:0;padding:0;}
+.small-card li {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* link styles for anchors inside .small-card */
+.small-card li a:link {
+  color: #a5022b;
+}
+.small-card li a:visited {
+  color: #5a0909;
+}
+.small-card time{color:#5a0606;font-size:12px;margin-left:6px;}
+.small-card .view-all{display:block;margin-top:8px;font-size:13px;color:inherit;text-decoration:none;opacity:0.8;}
+.blog-posts-home{
+  object-position: center;
+}
+.about-VOID a:link {
+  color: #a5022b;
+}
+.about-VOID a:visited {
+  color: #5a0909;
+}
+.about-VOID {
+  border: 2px solid #7a0014; /* Set border thickness here */
+  background: black;
+  padding: 0;
+  border-radius: 10px;
+  margin: 15px 0; /* Space between the boxes */
+  position: relative;
+  /* Removed the box-shadow borders for clarity */
+  /* Optional: add box-shadow for visual depth */
+  box-shadow:
+    inset 0 0 0 1px #2a0005,
+    0 0 0 1px #140003;
+}
+
+.about-creator {
+  border: 2px solid #7a0014; /* Same here for consistency */
+  background: black;
+  padding: 0;
+  border-radius: 10px;
+  margin: 15px 0; /* Space between the boxes */
+  position: relative;
+  /* Removed box-shadow borders or keep as needed */
+  box-shadow:
+    inset 0 0 0 1px #2a0005,
+    0 0 0 1px #140003;
+}
+
+/* Terminal header bar (tab) */
+.terminal-bar {
+  background: linear-gradient(to bottom, #1a0002, #0a0001);
+  border-bottom: 2px solid #7a0014;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  position: relative;
+  z-index: 3;
+}
+
+/* Larger, readable title on the LEFT */
+.h {
+  margin: 0;
+  padding: 0;
+  color: #7a0014;
+  font-size: 1.1rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  line-height: 1;
+  flex: none;
+  white-space: nowrap;
+}
+
+/* Window control buttons on the RIGHT */
+.window-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  border: 1px solid #7a0014;
+  display: inline-block;
+}
+
+.btn.close {
+  background: #7a0014;
+}
+
+.btn.min {
+  background: #5a000f;
+}
+
+.btn.max {
+  background: #3a0009;
+}
+
+/* Subtle scan-line effect for both boxes */
+.about-VOID::before,
+.about-creator::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 2px,
+    rgba(122, 0, 20, 0.03) 2px,
+    rgba(122, 0, 20, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Content row - photo on left, text on right */
+.content-row {
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+/* Left column with picture */
+.left-col {
+  flex: 0 0 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 14px;
+  text-align: center;
+  border-right: 1px solid #5a000f;
+}
+
+/* Profile picture with border style */
+.pfp {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  border: 3px double #7a0014;
+  border-radius: 6px;
+  box-shadow:
+    0 0 0 2px #1a0003,
+    inset 0 0 0 1px #120001;
+}
+
+/* Text content styling */
+.p {
+  margin: 0;
+  padding: 18px 18px 18px 14px;
+  color: #7a0014;
+  line-height: 1.7;
+  flex: 1;
+  text-align: left;
+  max-width: 62ch;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.shell {
+      border: 2px solid #7a0014;
+      background: black;
+      border-radius: 10px;
+      box-shadow:
+        inset 0 0 0 1px #2a0005,
+        0 0 0 1px #140003;
+      overflow: hidden;
+      position: relative;
+      margin: 18px 0;
+    }
+.shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 2px,
+        rgba(122, 0, 20, 0.03) 2px,
+        rgba(122, 0, 20, 0.03) 4px
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .shell-intro {
+      position: relative;
+      z-index: 2;
+      padding: 14px 16px;
+      border-bottom: 1px solid #5a000f;
+    }
+
+    .shell-intro p {
+      margin: 0;
+      font-family: "Cordata", monospace;
+      font-size: 17px;
+      line-height: 1.6;
+      color: #7a0014;
+    }
+
+    .shell-content {
+      position: relative;
+      z-index: 2;
+      padding: 14px;
+    }
+     /* Socials cards */
+    .socials-card {
+      border: 1px solid #660606;
+      border-radius: 8px;
+      background: #1a0202;
+      margin: 12px 0;
+      padding: 12px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .socials-image {
+      flex: 0 0 180px;
+      max-width: 180px;
+    }
+
+    .socials-image img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      border: 2px solid #7a0014;
+      border-radius: 6px;
+      box-shadow:
+        0 0 0 2px #1a0003,
+        inset 0 0 0 1px #120001;
+    }
+
+    .socials-info {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .socials-info h3 {
+      margin: 0 0 8px 0;
+      font-family: "IBM3xalt2", monospace;
+      font-size: 20px;
+      color: #7a0014;
+    }
+
+    .socials-info p {
+      margin: 0 0 6px 0;
+      font-family: "Cordata", monospace;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #7a0014;
+    }
+
+    .socials-info a {
+      text-decoration: none;
+    }
+
+    .socials-info a:hover {
+      text-decoration: underline;
+    }
+
+    .socials-list {
+      margin: 6px 0 0 0;
+      padding-left: 18px;
+      font-family: "Cordata", monospace;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #7a0014;
+    }
+
+    /* Contact section */
+    .contact-info {
+      margin: 0 0 6px 0;
+      font-family: "Cordata", monospace;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #7a0014;
+    }
+
+    .contact-info ul {
+      margin: 6px 0 0 0;
+      padding-left: 18px;
+    }
+
+    .contact-info strong {
+      color: #7a0014;
+    }
+
+    /* Small note box */
+    .note-box {
+      border: 1px solid #660606;
+      border-radius: 6px;
+      background: #150202;
+      padding: 10px 12px;
+      margin: 10px 0;
+      font-family: "Cordata", monospace;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #7a0014;
+    }
+    .home-signal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.video-posts-home {
+  max-width: 940px;
+}
+
+.blog-posts-home,
+.video-posts-home {
+  min-width: 0;
+}
+
+.blog-posts-home .small-card,
+.video-posts-home .small-card {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #7a0014;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at top left, rgba(122, 0, 20, 0.10), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(165, 2, 43, 0.08), transparent 24%),
+    linear-gradient(180deg, #090000 0%, #120101 100%);
+  box-shadow:
+    inset 0 0 0 1px #2a0005,
+    0 0 0 1px #140003,
+    0 0 22px rgba(122, 0, 20, 0.16);
+}
+
+.blog-posts-home .small-card::before,
+.video-posts-home .small-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    rgba(122, 0, 20, 0.03) 2px,
+    rgba(122, 0, 20, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.blog-posts-home .blog-preview-header,
+.video-posts-home .blog-preview-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px 10px;
+  background: linear-gradient(to bottom, #1a0002, #0a0001);
+  border-bottom: 2px solid #7a0014;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+.blog-posts-home .h,
+.video-posts-home .h {
+  margin: 0;
+  padding: 0;
+  color: #7a0014;
+  font-size: 1.02rem;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  font-family: "Cordata", monospace;
+  text-shadow: 0 0 8px rgba(122, 0, 20, 0.18);
+}
+
+.blog-posts-home .blog-preview-tag,
+.video-posts-home .blog-preview-tag {
+  font-family: "IBM3xalt2", monospace;
+  font-size: 12px;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: #8a3a3a;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.blog-posts-home .blog-preview-inner,
+.video-posts-home .blog-preview-inner {
+  position: relative;
+  z-index: 2;
+  padding: 14px 14px 12px;
+}
+
+.blog-posts-home .small-card-header,
+.video-posts-home .small-card-header {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #5a000f;
+}
+
+.blog-posts-home .small-card-header h4,
+.video-posts-home .small-card-header h4 {
+  margin: 0;
+  font-family: "IBM3xalt2", monospace;
+  font-size: 15px;
+  color: #d01c44;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.blog-posts-home .small-card-subtitle,
+.video-posts-home .small-card-subtitle {
+  margin: 4px 0 0 0;
+  font-family: "Cordata", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #8a3a3a;
+}
+
+.latest-posts-list,
+.latest-videos-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.blog-posts-home .latest-post-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 10px 9px;
+  margin: 8px 0;
+  border-radius: 10px;
+  background:
+    linear-gradient(90deg, rgba(122, 0, 20, 0.12), rgba(0, 0, 0, 0.00) 60%),
+    linear-gradient(180deg, #140101 0%, #0d0000 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.02),
+    0 0 0 1px #1d0004;
+}
+
+.blog-posts-home .latest-post-link {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.blog-posts-home .latest-post-link:hover .post-title {
+  color: #ff4469;
+  text-decoration: underline;
+}
+
+.blog-posts-home .post-index {
+  flex: 0 0 auto;
+  font-family: "IBM3xalt2", monospace;
+  font-size: 12px;
+  color: #5a000f;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.blog-posts-home .post-title {
+  min-width: 0;
+  font-family: "Cordata", monospace;
+  font-size: 16px;
+  line-height: 1.35;
+  color: #a5022b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.blog-posts-home .post-date {
+  margin-left: 22px;
+  font-family: "IBM3xalt2", monospace;
+  font-size: 12px;
+  color: #6f2a2a;
+  letter-spacing: 0.4px;
+}
+
+.latest-post-empty,
+.latest-video-empty {
+  padding: 12px 10px;
+  font-family: "Cordata", monospace;
+  font-size: 15px;
+  color: #7a0014;
+  opacity: 0.85;
+}
+
+.video-posts-home .latest-video-item {
+  margin: 8px 0;
+}
+
+.video-posts-home .latest-video-link {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 8px;
+  border-radius: 10px;
+  text-decoration: none;
+  background:
+    linear-gradient(90deg, rgba(122, 0, 20, 0.10), rgba(0, 0, 0, 0.00) 62%),
+    linear-gradient(180deg, #140101 0%, #0d0000 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.02),
+    0 0 0 1px #1d0004;
+}
+
+.video-posts-home .latest-video-thumb {
+  width: 96px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+  background: #050000;
+  box-shadow:
+    0 0 0 1px #2a0005,
+    inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+.video-posts-home .latest-video-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.video-posts-home .video-index {
+  font-family: "IBM3xalt2", monospace;
+  font-size: 12px;
+  color: #5a000f;
+  letter-spacing: 1px;
+}
+
+.video-posts-home .video-title {
+  font-family: "Cordata", monospace;
+  font-size: 15px;
+  line-height: 1.35;
+  color: #a5022b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.video-posts-home .latest-video-link:hover .video-title {
+  color: #ff4469;
+  text-decoration: underline;
+}
+
+.blog-posts-home .view-all,
+.video-posts-home .view-all {
+  display: inline-block;
+  margin-top: 12px;
+  font-family: "IBM3xalt2", monospace;
+  font-size: 13px;
+  color: #d01c44;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.blog-posts-home .view-all:hover,
+.video-posts-home .view-all:hover {
+  color: #ff4469;
+  text-decoration: underline;
+}
+
+@media (max-width: 980px) {
+  .home-signal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-posts-home,
+  .video-posts-home {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .blog-posts-home {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .blog-posts-home .blog-preview-header,
+  .video-posts-home .blog-preview-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .blog-posts-home .post-title {
+    white-space: normal;
+  }
+
+  .blog-posts-home .post-date {
+    margin-left: 0;
+  }
+
+  .video-posts-home .latest-video-link {
+    grid-template-columns: 84px 1fr;
+  }
+
+  .video-posts-home .latest-video-thumb {
+    width: 84px;
+    height: 56px;
+  }
+
+  .video-posts-home .video-title {
+    white-space: normal;
+  }
+}
+
+</style>
+</head>
+<body>
+  <header class="site-header">
+  <div class="banner">
+    <img src="/Images/header.png" alt="Site banner" class="header-banner">
+    <div class="banner-content">
+      <h1 style="font-family: 'PxPlusRainbow100', system-ui, sans-serif; font-size:80px; padding:0; margin-top: 40px; margin-bottom: 0;">VOID INITIATION</h1>
+<p style="font-family: 'Cordata', monospace; font-weight: bold; font-size: 19px; margin-top: 3px;">Liberation Project. We are breaking free from Matrix in a real way.</p>
+    </div>
+  </div>
+</header>
+
+  <nav>
+    <a href="index.html">home⚝</a>
+    <a href="blog.html">blog𓇻</a>
+    <a href="services.html">services✰</a>
+    <a href="socials.html">socials✰</a>
+  </nav>
+
+  <main>
+     <div class="home-signal-grid">
+
+  <div class="blog-posts-home">
+    <aside id="latest-posts" class="small-card blog-preview-card" aria-labelledby="latest-posts-title">
+      <div class="blog-preview-header">
+        <h2 class="h">VOID's Blog</h2>
+        <span class="blog-preview-tag">Archive signal</span>
+      </div>
+
+      <div class="blog-preview-inner">
+        <div class="small-card-header">
+          <h4 id="latest-posts-title">Latest entries</h4>
+          <p class="small-card-subtitle">Recent transmissions from the archive</p>
+        </div>
+
+        <ul id="latest-posts-list" class="latest-posts-list"></ul>
+
+        <a href="/blog.html" class="view-all">All posts →</a>
+      </div>
+    </aside>
+  </div>
+
+  <div class="video-posts-home">
+    <aside id="latest-videos" class="small-card video-preview-card" aria-labelledby="latest-videos-title">
+      <div class="blog-preview-header">
+        <h2 class="h">VOID's Videos</h2>
+        <span class="blog-preview-tag">Latest broadcast</span>
+      </div>
+
+      <div class="blog-preview-inner">
+        <div class="small-card-header">
+          <h4 id="latest-videos-title">Latest uploads</h4>
+          <p class="small-card-subtitle">Recent visual transmissions</p>
+        </div>
+
+        <ul id="latest-videos-list" class="latest-videos-list"></ul>
+
+        <a href="/videos.html" class="view-all">All videos →</a>
+      </div>
+    </aside>
+  </div>
+
+</div>
+
+<script>
+  async function loadLatestPosts(src='/posts-data.json', limit=3){
+    try{
+      const r = await fetch(src);
+      if(!r.ok) throw new Error();
+      const all = await r.json();
+      const published = all
+        .filter(p=>!p.draft)
+        .sort((a,b)=>new Date(b.date)-new Date(a.date))
+        .slice(0,limit);
+
+      const list = document.getElementById('latest-posts-list');
+
+      list.innerHTML = published.map((p, i)=>`
+        >
+          <a class="latest-post-link" href="/blog-post.html?id=${encodeURIComponent(p.id)}">
+            <span class="post-index">${String(i + 1).padStart(2, '0')}</span>
+            <span class="post-title">${escapeHtml(p.title)}</span>
+          </a>
+          <time class="post-date" datetime="${escapeHtml(p.date)}">${new Date(p.date).toLocaleDateString()}</time>
+        </li>
+      `).join('');
+
+      if (!published.length) {
+        list.innerHTML = '>No posts available.</li>';
+      }
+    }catch(e){
+      document.getElementById('latest-posts-list').innerHTML = '>Unable to load posts</li>';
+    }
+  }
+
+  async function loadLatestVideos(config = {}) {
+    const list = document.getElementById('latest-videos-list');
+
+    try {
+      const source = config.source || 'youtube';
+      let items = [];
+
+      if (source === 'youtube') {
+        const channelId = config.channelId || '';
+        const apiKey = config.apiKey || '';
+
+        if (!channelId || !apiKey) throw new Error('Missing YouTube config');
+
+        const searchUrl =
+          'https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=date&maxResults=3' +
+          '&channelId=' + encodeURIComponent(channelId) +
+          '&key=' + encodeURIComponent(apiKey);
+
+        const r = await fetch(searchUrl);
+        if (!r.ok) throw new Error();
+        const data = await r.json();
+        items = (data.items || []).map(v => ({
+          id: v.id.videoId,
+          title: v.snippet.title,
+          thumb: v.snippet.thumbnails?.high?.url || v.snippet.thumbnails?.medium?.url || v.snippet.thumbnails?.default?.url
+        }));
+      } else if (source === 'peertube') {
+        const base = config.baseUrl || '';
+        const channel = config.channel || '';
+        if (!base || !channel) throw new Error('Missing PeerTube config');
+
+        const url = base.replace(/\/$/, '') + '/api/v1/videos?sort=-publishedAt&start=0&count=3&nsfw=both';
+        const r = await fetch(url);
+        if (!r.ok) throw new Error();
+        const data = await r.json();
+        items = (data.data || []).slice(0, 3).map(v => ({
+          id: v.id,
+          title: v.name,
+          thumb: v.thumbnailPath ? (base.replace(/\/$/, '') + v.thumbnailPath) : ''
+        }));
+      } else {
+        throw new Error('Unknown source');
+      }
+
+      list.innerHTML = items.map((v, i) => `
+        >
+          <a class="latest-video-link" href="${source === 'youtube' ? 'https://www.youtube.com/watch?v=' : config.baseUrl + '/w/videos/watch/'}${encodeURIComponent(v.id)}" target="_blank" rel="noreferrer">
+            <img class="latest-video-thumb" src="${escapeHtml(v.thumb || '/Images/default-thumb.png')}" alt="${escapeHtml(v.title)} thumbnail" loading="lazy">
+            <span class="latest-video-text">
+              <span class="video-index">${String(i + 1).padStart(2, '0')}</span>
+              <span class="video-title">${escapeHtml(v.title)}</span>
+            </span>
+          </a>
+        </li>
+      `).join('');
+
+      if (!items.length) {
+        list.innerHTML = '>No videos available.</li>';
+      }
+    } catch (e) {
+      list.innerHTML = '>Unable to load videos</li>';
+    }
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g,c=>({
+      '&':'&amp;',
+      '<':'&lt;',
+      '>':'&gt;',
+      '"':'&quot;',
+      "'":'&#39;'
+    })[c]);
+  }
+
+  loadLatestPosts();
+
+  loadLatestVideos({
+    source: 'youtube',
+    channelId: 'YOUR_CHANNEL_ID',
+    apiKey: 'YOUR_YOUTUBE_API_KEY'
+  });
+</script>
+
+
+<div class="about-VOID">
+  <div class="terminal-bar">
+    <h2 class="h">About VOID ✠</h2>
+    <span class="window-controls">
+      <span class="btn close"></span>
+      <span class="btn min"></span>
+      <span class="btn max"></span>
+    </span>
+  </div>
+
+  <div class="content-row">
+    <div class="left-col">
+      <img class="pfp" src="Images/void1.png" alt="Profile Picture">
+      <a href="/socials.html" class="socials-link">See VOID's socials</a>
+    </div>
+    <p class="p">VOID INITIATION is a Liberation Project. Here, we break free from Matrix in a real way, by exploring the ways in which we are collectively influenced. 
+      VOID is about combining science with spirituality, and coming up with a larger picture of life and society. 
+      In the world where distraction is the way those in power make us incapable of making any meaningful change, where humans are kept in a state of a dream world, 
+      where human psychology is used as a weapon, where we are given artificial replacements of human values behind a pay wall, 
+      where majority of the people lack basic self awareness in order to make better decisions for themselves... VOID is here to wake You up, to make You aware, to show you other choices, 
+      and it's possibly in this way, that we can collectively make a change.</p>
+  </div>
+</div>
+
+<div class="about-creator">
+  <div class="terminal-bar">
+    <h2 class="h">About Creator 𓆩♡𓆪</h2>
+    <span class="window-controls">
+      <span class="btn close"></span>
+      <span class="btn min"></span>
+      <span class="btn max"></span>
+    </span>
+  </div>
+
+  <div class="content-row">
+    <div class="left-col">
+      <img class="pfp" src="Images/meil.png" alt="Profile Picture">
+    </div>
+    <p class="p">With over 9 years of expirience in spirituality, I aspire to make a connection between science and spirituality. While working with themes
+      of faith and belief in social enviornments, and observing the abstraction of human thought, and the guillibility of it, 
+      I am motivated by the vision of a world and people, who are more self aware and can make better choices for themselves, beyond how anything or anyone tries to influence us.
+      I aspire to live surrounded by smarter, more educated humanity, who's nature and psychology isn't used against their well being, in any sphere of life. 
+    </p>
+      
+  </div>
+</div>
+<section class="shell">
+      <div class="terminal-bar">
+        <h2 class="h">SUPPORT</h2>
+        <span class="window-controls">
+          <span class="btn close"></span>
+          <span class="btn min"></span>
+          <span class="btn max"></span>
+        </span>
+      </div>
+
+      <div class="shell-intro">
+        <p>
+          All content on this website; blog posts, photography, illustrations,
+          all my videos, and everything in between, is originally created by me.
+          I put all of myself, and thus, a lot of my personal time into creating this presence.
+          I avoid putting anything behind a paywall, because I believe that high value information
+          should be freely available, especially to those who seek it. 
+          Your support will be immenesly important to the upkeep of this website and what I am sharing.
+        </p>
+      </div>
+
+      <div class="shell-content">
+
+        <article class="socials-card">
+          <div class="socials-image">
+            <img src="Images/heart.png" alt="Creator"/>
+          </div>
+          <div class="socials-info">
+            <h3>Donate to VOID</h3>
+            <p class="contact-info">
+              <strong>PayPal:</strong><br />
+              <a herf= src></a>paypal.me/golt23</a>
+            </p>
+            <p class="note-box">
+              Thank You !
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+</main>
+
+
+  <footer>
+    &copy; 2026 VOID Initiation
+  </footer>
+</body>
+</html>
