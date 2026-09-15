@@ -785,10 +785,10 @@ nav a:hover {
 <body>
   <header class="site-header">
   <div class="banner">
-    <img src="/Images/header.png" alt="Site banner" class="header-banner">
+    <img src="/Images/header.webp" alt="Site banner" class="header-banner">
     <div class="banner-content">
       <h1 style="font-family: 'PxPlusRainbow100', system-ui, sans-serif; font-size:80px; padding:0; margin-top: 40px; margin-bottom: 0;">VOID INITIATION</h1>
-<p style="font-family: 'Cordata', monospace; font-weight: bold; font-size: 19px; margin-top: 3px;">Liberation Project. We are breaking free from Matrix in a real way.</p>
+<p style="font-family: 'Cordata', monospace; font-weight: bold; font-size: 19px; margin-top: 3px;">Liberation Project.</p>
     </div>
   </div>
 </header>
@@ -807,13 +807,13 @@ nav a:hover {
     <aside id="latest-posts" class="small-card blog-preview-card" aria-labelledby="latest-posts-title">
       <div class="blog-preview-header">
         <h2 class="h">VOID's Blog</h2>
-        <span class="blog-preview-tag">Archive signal</span>
+        <span class="blog-preview-tag">posts</span>
       </div>
 
       <div class="blog-preview-inner">
         <div class="small-card-header">
           <h4 id="latest-posts-title">Latest entries</h4>
-          <p class="small-card-subtitle">Recent transmissions from the archive</p>
+          <p class="small-card-subtitle">Recent transmissions</p>
         </div>
 
         <ul id="latest-posts-list" class="latest-posts-list"></ul>
@@ -923,7 +923,7 @@ nav a:hover {
       list.innerHTML = items.map((v, i) => `
         >
           <a class="latest-video-link" href="${source === 'youtube' ? 'https://www.youtube.com/watch?v=' : config.baseUrl + '/w/videos/watch/'}${encodeURIComponent(v.id)}" target="_blank" rel="noreferrer">
-            <img class="latest-video-thumb" src="${escapeHtml(v.thumb || '/Images/default-thumb.png')}" alt="${escapeHtml(v.title)} thumbnail" loading="lazy">
+            <img class="latest-video-thumb" src="${escapeHtml(v.thumb || '/Images/default-thumb.webp')}" alt="${escapeHtml(v.title)} thumbnail" loading="lazy">
             <span class="latest-video-text">
               <span class="video-index">${String(i + 1).padStart(2, '0')}</span>
               <span class="video-title">${escapeHtml(v.title)}</span>
@@ -972,15 +972,15 @@ nav a:hover {
 
   <div class="content-row">
     <div class="left-col">
-      <img class="pfp" src="Images/void1.png" alt="Profile Picture">
+      <img class="pfp" src="Images/void1.webp" alt="Profile Picture">
       <a href="/socials.html" class="socials-link">See VOID's socials</a>
     </div>
-    <p class="p">VOID INITIATION is a Liberation Project. Here, we break free from Matrix in a real way, by exploring the ways in which we are collectively influenced. 
-      VOID is about combining science with spirituality, and coming up with a larger picture of life and society. 
-      In the world where distraction is the way those in power make us incapable of making any meaningful change, where humans are kept in a state of a dream world, 
-      where human psychology is used as a weapon, where we are given artificial replacements of human values behind a pay wall, 
-      where majority of the people lack basic self awareness in order to make better decisions for themselves... VOID is here to wake You up, to make You aware, to show you other choices, 
-      and it's possibly in this way, that we can collectively make a change.</p>
+    <p class="p">VOID INITIATION is a Liberation Project made to break ourselves free, by exploring the ways in which we are collectively influenced. 
+      VOID is about combining science with spirituality, and coming up with a larger picture of reality. 
+      In the world where distraction makes us incapable of making any change, where humans are kept in a dream world, 
+      where psychology is used as a weapon, where we are given artificial values behind a pay wall, 
+      where people lack self awareness in order to make better choices... VOID is here to wake You up, to make You aware, to show you an alternative path, 
+      and it's possibly in this way, that we can collectively change.</p>
   </div>
 </div>
 
@@ -996,13 +996,12 @@ nav a:hover {
 
   <div class="content-row">
     <div class="left-col">
-      <img class="pfp" src="Images/meil.png" alt="Profile Picture">
+      <img class="pfp" src="Images/meil.webp" alt="Profile Picture">
     </div>
     <p class="p">With over 9 years of expirience in spirituality, I aspire to make a connection between science and spirituality. While working with themes
       of faith and belief in social enviornments, and observing the abstraction of human thought, and the guillibility of it, 
-      I am motivated by the vision of a world and people, who are more self aware and can make better choices for themselves, beyond how anything or anyone tries to influence us.
-      I aspire to live surrounded by smarter, more educated humanity, who's nature and psychology isn't used against their well being, in any sphere of life. 
-    </p>
+      I am motivated by the vision of a world and people, who are more self aware and can make better choices for themselves.
+      </p>
       
   </div>
 </div>
@@ -1018,12 +1017,9 @@ nav a:hover {
 
       <div class="shell-intro">
         <p>
-          All content on this website; blog posts, photography, illustrations,
-          all my videos, and everything in between, is originally created by me.
-          I put all of myself, and thus, a lot of my personal time into creating this presence.
-          I avoid putting anything behind a paywall, because I believe that high value information
-          should be freely available, especially to those who seek it. 
-          Your support will be immenesly important to the upkeep of this website and what I am sharing.
+          All content on this website; blog posts, photography, illustrations - is originally created by me.
+          I put all of myself and a lot of time into creating this presence.
+          Your support is important to the upkeep of this website and what I'm sharing.
         </p>
       </div>
 
@@ -1031,7 +1027,7 @@ nav a:hover {
 
         <article class="socials-card">
           <div class="socials-image">
-            <img src="Images/heart.png" alt="Creator"/>
+            <img src="Images/heart.webp" alt="Creator"/>
           </div>
           <div class="socials-info">
             <h3>Donate to VOID</h3>
