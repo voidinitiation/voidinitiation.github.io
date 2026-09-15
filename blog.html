@@ -354,7 +354,7 @@
 <body>
   <header class="site-header">
     <div class="banner">
-      <img src="/Images/header.png" alt="Site banner" class="header-banner">
+      <img src="/Images/header.webp" alt="Site banner" class="header-banner">
       <div class="banner-content">
         <h1 style="font-family: 'PxPlusRainbow100', system-ui, sans-serif; font-size:80px; padding:0; margin-top: 40px; margin-bottom: 0;">VOID INITIATION</h1>
         <p style="font-family: 'Cordata', monospace; font-weight: bold; font-size: 19px; margin-top: 3px;">
@@ -406,7 +406,7 @@
     }
 
     function getThumb(post) {
-      return post.thumbnail || post.thumb || post.image || post.cover || post.preview_image || "/Images/default-thumb.png";
+      return post.thumbnail || post.thumb || post.image || post.cover || post.preview_image || "/Images/default-thumb.webp";
     }
 
     fetch("/posts-data.json")
