@@ -109,54 +109,154 @@
       color: #7a0014;
     }
 
-    .site-header {
-      width: 100%;
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      max-width: none;
-    }
+   .site-header {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
 
-    .banner {
-      position: relative;
-      height: 250px;
-      overflow: hidden;
-      width: 100%;
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+.banner {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
 
-    .header-banner {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 28%;
-      display: block;
-      margin: 0;
-      padding: 0;
-      border: 0;
-    }
+.header-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  filter: saturate(1.05) contrast(1.03);
+}
 
-    .banner-content {
-      position: absolute;
-      left: 240px;
-      top: 20px;
-      z-index: 2;
-      background: linear-gradient(90deg, #530101 0%, #660106 25%, #912638 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0px;
-    }
+/* Overlay content */
+.banner-content {
+  position: absolute;
+  left: 220px;
+  top: 28px;
+  z-index: 2;
+  max-width: 520px;
+  color: #7a0014;
+}
 
-    @media (max-width:600px){
-      .banner { height: 160px; }
-      .banner-content { left: 12px; top: 12px; }
-      .banner-content h1 { font-size: 1.2rem; margin:0; }
-    }
+/* Main title: VOID / INITIATION stacked */
+.banner-title {
+  margin: 0;
+  padding: 0;
+  line-height: 0.95;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+}
 
+/* "VOID" – big, bold, distinct */
+.title-main {
+  display: block;
+  font-family: "PxPlusRainbow100", system-ui, sans-serif;
+  font-size: 72px;
+  color: #c91b3f;
+  text-shadow:
+    0 0 10px rgba(201, 27, 63, 0.6),
+    0 0 22px rgba(201, 27, 63, 0.35);
+  letter-spacing: 2px;
+  margin-bottom: -6px;
+}
+
+/* "INITIATION" – smaller, monospaced, techy */
+.title-sub {
+  display: block;
+  font-family: "IBM3xalt2", monospace;
+  font-size: 22px;
+  color: #ff4d6a;
+  letter-spacing: 3.5px;
+  text-shadow:
+    0 0 8px rgba(255, 77, 106, 0.5);
+  margin-top: 2px;
+}
+
+/* Tagline under title */
+.banner-tagline {
+  margin: 10px 0 0 0;
+  padding: 0;
+  font-family: "ToshibaSat", monospace;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  color: #9a2f44;
+  text-transform: uppercase;
+  text-shadow: 0 0 6px rgba(154, 47, 68, 0.5);
+}
+
+/* Small decorative bar to tie it into your terminal style */
+.banner-deco {
+  margin-top: 10px;
+  height: 3px;
+  width: 180px;
+  background: linear-gradient(
+    90deg,
+    #7a0014 0%,
+    #c91b3f 45%,
+    #ff4d6a 100%
+  );
+  border-radius: 2px;
+  box-shadow:
+    0 0 10px rgba(201, 27, 63, 0.6),
+    0 0 18px rgba(201, 27, 63, 0.35);
+  position: relative;
+}
+
+/* Optional subtle glow behind text to separate from busy background */
+.banner-content::before {
+  content: "";
+  position: absolute;
+  inset: -10px -14px -14px -10px;
+  background: radial-gradient(
+    ellipse at 0% 50%,
+    rgba(122, 0, 20, 0.25),
+    transparent 60%
+  );
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(6px);
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .banner { height: 220px; }
+  .banner-content {
+    left: 140px;
+    top: 22px;
+    max-width: 420px;
+  }
+  .title-main { font-size: 56px; }
+  .title-sub { font-size: 18px; letter-spacing: 2.8px; }
+  .banner-tagline { font-size: 12px; }
+  .banner-deco { width: 140px; }
+}
+
+@media (max-width: 600px) {
+  .banner { height: 170px; }
+  .banner-content {
+    left: 14px;
+    top: 14px;
+    max-width: 90%;
+  }
+  .title-main { font-size: 42px; }
+  .title-sub { font-size: 15px; letter-spacing: 2.2px; }
+  .banner-tagline { font-size: 11px; }
+  .banner-deco { width: 120px; }
+}
     .small-card {
       padding: 8px;
       border: 2px solid #700606;
@@ -852,14 +952,19 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="banner">
-      <img src="/Images/header.webp" alt="Site banner" class="header-banner">
-      <div class="banner-content">
-        <h1 style="font-family: 'PxPlusRainbow100', system-ui, sans-serif; font-size:80px; padding:0; margin-top: 40px; margin-bottom: 0;">VOID INITIATION</h1>
-        <p style="font-family: 'Cordata', monospace; font-weight: bold; font-size: 19px; margin-top: 3px;">Liberation Project.</p>
-      </div>
+  <div class="banner">
+    <img src="/Images/header.webp" alt="Site banner" class="header-banner">
+
+    <div class="banner-content">
+      <h1 class="banner-title">
+        <span class="title-main">VOID</span>
+        <span class="title-sub">INITIATION</span>
+      </h1>
+      <p class="banner-tagline">Liberation Protocol // Signal 0xV01D</p>
+      <div class="banner-deco"></div>
     </div>
-  </header>
+  </div>
+</header>
 
   <nav>
     <a href="index.html">home⚝</a>
